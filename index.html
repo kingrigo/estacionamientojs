@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="css/mystyles.css">
+    <title>Estacionapp</title>
+</head>
+<body>
+    <!--NAV-->
+    <header class="has-background-dark ">
+        <div class="level is-mobile">
+            <div class="level-item has-text-centered">
+                <a href="#" class="navbar-item has-text-light" id="espacioBtn">Espacio</a>   
+
+            </div>
+            <div class="level-item has-text-centered">
+                <span class="navbar-item">
+                        <img src="img/logo.png" alt="EstacionApp" width="112" height="38">
+                </span>
+
+            </div>
+            <div class="level-item has-text-centered">
+                <a href="#" class="navbar-item has-text-light" id="precioBtn">Precio</a>   
+
+            </div>
+        </div>
+        
+    </header>
+    <!--Agregar Nuevo-->
+    <div class="container nuevo">
+
+        <div class="field has-addons">
+            <div class="control">
+                <span class="select">
+                    <select name="" id="patenteSelect" onchange="cambPatente()">
+                        <option value="6">Vieja</option>
+                        <option value="7">Nueva</option>
+                    </select>
+                </span>
+            </div>
+            <div class="control is-expanded">
+                <input type="text" class="input is-primary" placeholder="Patente" id="newInput">
+            </div>
+            <div class="control">
+                <a class="button is-warning" id="agregarBtn">
+                    Agregar
+                </a>
+            </div>
+            
+        </div>
+        <p class="help is-danger" id="errorText"></p>
+        
+    
+    <!--
+        <section class="container">
+            
+        </section>
+    
+    -->
+    
+    <div class="tabs is-centered is-toggle is-toggle is-fullwidth">
+        <ul>
+          <li class="is-active" id="autoC"><a>Autos<span class="tag is-rounded is-warning" id="autoT">0</span></a></li>
+          <li id="motoC"><a>Motos<span class="tag is-rounded is-warning" id="motoT">0</span></a></li>
+          <li id="camionetaC"><a>Camionetas<span class="tag is-rounded is-warning" id="camionetaT">0</span></a></li>
+        </ul>
+      </div>
+    <!--PATENTES-->
+    <div class="box has-background-light menu" id="parkID">
+        <div class="columns is-mobile">
+            <!--<div class="column is-7">
+                prueba
+            </div>
+            <div class="column is-3">
+                <span class="tag is-info">12:30</span>
+            </div>
+            <div class="column is-2">
+                <i class="far fa-times-circle"></i>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    
+    <div class="modal" id="modal">
+        <div class="modal-background"></div>
+            <div class="modal-card">
+              <div class="modal-card-head">
+                <p class="modal-card-title" id="modalTitle"></p>
+                <button class="delete" aria-label="close" onclick="cerrarModal()"></button>
+              </div>
+              <div class="modal-card-body" id="modalContent">
+                <!-- Content ... -->
+              </div>
+              <div class="modal-card-foot">
+                  <button class="button" onclick="cerrarModal()" id="cancelarBtn">Cancelar</button>
+                  <button class="button is-success" id="submitBtn">Guardar</button>
+              </div>
+            </div>        
+    </div>
+    
+    <!--FOOTER-->        
+    <div id="dinero" class="has-text-centered">
+            Total Dinero: $<span id="moneySpan">0</span>
+            <a id="historialBtn" class="has-text-warning"><i class="far fa-eye"></i></a> 
+    
+    </div>
+
+</div>
+    <!--JAVASCRIPT-->
+    <script src="js/moment.min.js"></script>
+    <script src="js/vanillaTextMask.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
